@@ -15,7 +15,32 @@ def play_game():
     player_name = console.input("[b]Enter your name:[/b] ")
     player = Player(player_name)
     console.print(Panel(f"Hello, {player.name}! Game functionality would go here", title="Play"))
-    console.input("\n[i]Press Enter to continue...[/i]")
+    turns = 0
+    while True:
+        turns += 1
+        console.print(Panel(f"Turn {turns}", title="Game Turn"))
+        console.print("Game actions would happen here...")
+
+        console.print("\n[b]Options:[/b]")
+        console.print("1: Submit")
+        console.print("d: Read Documentation")
+        console.print("q: Quit to Main Menu")
+
+        choice = console.input("\n[b]Enter your choice:[/b] ")
+
+        if choice == "1":
+            console.print("Continuing game...")
+            time.sleep(1)
+        elif choice == "d":
+            read_documentation()
+        elif choice == "q":
+            console.print("Quitting to Main Menu...")
+            break
+        else:
+            console.print(Panel("Invalid choice. Please try again.", style="bold red"))
+            console.input("\n[i]Press Enter to continue...[/i]")
+
+    console.input("\n[i]Press Enter to return to the main menu...[/i]")
 
 
 def read_documentation():
