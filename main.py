@@ -15,7 +15,7 @@ def play_game():
     player_name = console.input("[b]Enter your name:[/b] ")
     player = Player(player_name)
     console.print(Panel(f"Hello, {player.name}! Game functionality would go here", title="Play"))
-    input("\nPress Enter to continue...")
+    console.input("\n[i]Press Enter to continue...[/i]")
 
 
 def read_documentation():
@@ -32,7 +32,7 @@ def read_documentation():
     except Exception as e:
         console.print(Panel(f"Error: {str(e)}", title="Error", style="bold red"))
 
-    input("\nPress Enter to continue...")
+    console.input("\n[i]Press Enter to continue...[/i]")
 
 
 def main_menu():
@@ -50,7 +50,7 @@ def main_menu():
         for option in options:
             console.print(option)
 
-        choice = input("\nEnter your choice (1-3): ")
+        choice = console.input("\n[b]Enter your choice (1-3):[/b] ")
 
         if choice == "1":
             play_game()
@@ -61,7 +61,7 @@ def main_menu():
             break
         else:
             console.print(Panel("Invalid choice. Please try again.", style="bold red"))
-            input("\nPress Enter to continue...")
+            console.input("\n[i]Press Enter to continue...[/i]")
 
 
 if __name__ == "__main__":
