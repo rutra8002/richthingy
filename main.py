@@ -6,10 +6,15 @@ import time
 
 console = Console()
 
+class Player:
+    def __init__(self, name):
+        self.name = name
 
 def play_game():
     """Placeholder for game functionality"""
-    console.print(Panel("Game functionality would go here", title="Play"))
+    player_name = console.input("[b]Enter your name:[/b] ")
+    player = Player(player_name)
+    console.print(Panel(f"Hello, {player.name}! Game functionality would go here", title="Play"))
     input("\nPress Enter to continue...")
 
 
